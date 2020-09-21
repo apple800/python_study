@@ -1,12 +1,32 @@
 from random import *
 
+class Hangman:
+    # 단어 사전을 초기화 할 때 지정
+    def __init__(self, dicts):
+        self.dicts = dicts
+        self.answer = self.random_choice_answer(self.dicts)
+        self.save_letters = []
+
+    def start_menu(self):
+        print('행맨 게임에 오신 여러분을 환영합니다.')
+        print('단어는 무작위로 출제가 됩니다.')
+        print('총 기회는 10번입니다.')
+
+    # 무작위 선택 (sting 으로 저장)
+    def random_choice_answer(self, dicts):
+        return choice(dicts)
+
 # 단어 저장소
 dictionaries = ['apple', 'pear', 'cheery']
+
+player = Hangman(dictionaries)
+
+player.start_menu()
 
 # 사용자가 입력한 단어 저장
 save_letters = []
 
-# 무작위 선택 (sting 으로 저장)
+
 answer = choice(dictionaries)
 
 # 선택된 단어의 길이
@@ -21,7 +41,7 @@ for blank in blanks:
 print(f'\n총 {len(answer)}글자입니다\n')
 
 
-for count in range(5, 0, -1):
+for count in range(10, 0, -1):
     # 사용자 글자 입력
     print(f'기회는 {count}번 남았습니다.\n')
     user_input = input('글자 또는 답을 입력하세요 : ')
