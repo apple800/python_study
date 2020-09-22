@@ -51,6 +51,7 @@ class Hangman:
                         if self.answer[n] == user_input:
                             self.blanks[n] = user_input
                             continue
+                    # 빈칸을 다 채웠을 경우에 정답 인정
                     if '_' not in self.blanks:
                         print('정답입니다.')
                         break
