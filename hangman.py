@@ -50,6 +50,10 @@ class Hangman:
                     for n in range(self.lengh_answer):
                         if self.answer[n] == user_input:
                             self.blanks[n] = user_input
+                            continue
+                    if '_' not in self.blanks:
+                        print('정답입니다.')
+                        break
             else:
                 print('없는 단어입니다.')
 
