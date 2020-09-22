@@ -9,9 +9,9 @@ class Hangman:
         # 사용자가 입력한 단어 저장
         self.save_letters = []
         # 선택된 단어의 길이
-        self.lengh_answer = len(self.answer)
+        self.lenght_answer = len(self.answer)
         # 사용자에게 글자 수 보여주는 변수
-        self.blanks = ['_' for i in range(self.lengh_answer)]
+        self.blanks = ['_' for i in range(self.lenght_answer)]
 
     def start_menu(self):
         print('행맨 게임에 오신 여러분을 환영합니다.')
@@ -47,7 +47,7 @@ class Hangman:
                     print(f'{user_input}는 단어에 포함이 되어 있습니다.')
                     self.save_letters.append(user_input)
                     # 입력된 글자와 답을 비교해가면서 빈칸을 단어로 바꾸기
-                    for n in range(self.lengh_answer):
+                    for n in range(self.lenght_answer):
                         if self.answer[n] == user_input:
                             self.blanks[n] = user_input
                             continue
