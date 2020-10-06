@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-form flask_sqlalchemy import flask_sqlalchemy
+from flask_sqlalchemy import flask_sqlalchemy
 from flask_marshmallow import marshmallow
 import os
 
@@ -28,12 +28,17 @@ class Todos(db.Model):
         self.desc = desc
 
 # Produnt schema
+class TodoSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'desc')
 
-
-# Shema init
+# Schema init
+todo_schema = TodoSchema() # one to one
+todos_schema = TodoSchema(many = True) # select multiple rows
 
 
 # RESTFUL API
+
 
 
 # RUN SERVER
