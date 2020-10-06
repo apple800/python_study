@@ -37,9 +37,16 @@ todo_schema = TodoSchema() # one to one
 todos_schema = TodoSchema(many = True) # select multiple rows
 
 
-# RESTFUL API
-
-
+## RESTFUL API
+# Create todos
+@app.route('/todo', methods=['POST'])
+def add_todo():
+    desc = request.json['desc']
+    new_todo = Todos(desc)
+    
+    db.session.add(new_todo)
+    db.session.commit()
+    return todo_schema.jsonify(new_todo)
 
 # RUN SERVER
 if __name__ == '__main__':
