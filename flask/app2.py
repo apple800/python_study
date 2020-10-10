@@ -7,6 +7,7 @@ app = Flask(__name__)
 # path os, glob(regex) / pathlib Path
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 # db
 # db 위치 지정
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
