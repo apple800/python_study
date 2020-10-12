@@ -17,7 +17,15 @@
     <form action="#" method="POST">
         <input type="text" name="new_task">
         <button type="submit">Add</button>
+        <br><br>
+        <input type="number" name="num" id="">
+        <input type="text" name="mo">
+      <button type="submit">modify</button>
     </form>
+
+
+      
+
 
     {% for task in todo %}
         <li>
@@ -27,6 +35,6 @@
         </li>
     {% endfor %}
 
-
+    
   </body>
 </html>

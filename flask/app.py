@@ -11,9 +11,15 @@ db = []
 def main():
     if request.method == 'POST':
         new_task = request.form['new_task']
+        modify_task = request.form['mo']
+        num = request.form['num']
+
         if len(new_task) > 0 and new_task not in db:
             db.append(new_task)
-    # context = {}
+
+        if len(modify_task) > 0 and new_task not in db:
+            db[int(num)-1] = modify_task
+
     return render_template('index.html', todo=db, name='Bin')
 
 
@@ -22,15 +28,14 @@ def delete(task):
     db.remove(task)
     return redirect(url_for('main'))
 
+
 # Update list
-
-
 @app.route('/update/<task>', methods=['GET'])
 def update(task):
     num = db.index(task)
-    text = form['new_task']
+    text = '수정'
     db[num] = text
-    
+
     return redirect(url_for('main'))
 
 
