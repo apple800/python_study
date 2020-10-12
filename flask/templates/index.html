@@ -23,7 +23,7 @@
         <li>
             {{task}}
             <a href="{{url_for('delete', task=task)}}">DELETE</a>
-            <a href="{{url_for('update', task=task, text=text)}}">UPDATE</a>
+            <a href="{{url_for('update', task=task)}}">UPDATE</a>
         </li>
     {% endfor %}
 

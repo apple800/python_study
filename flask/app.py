@@ -5,9 +5,8 @@ app = Flask(__name__)
 
 db = []
 
+
 # URI, endpoint
-
-
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
@@ -17,15 +16,21 @@ def main():
     # context = {}
     return render_template('index.html', todo=db, name='Bin')
 
+
 @app.route('/delete/<task>', methods=['GET'])
 def delete(task):
     db.remove(task)
     return redirect(url_for('main'))
 
 # Update list
-@app.route('/update/<task>=<text>', methods=['GET'])
-def update(task, text):
-    db[int(task)-1] = text
+
+
+@app.route('/update/<task>', methods=['GET'])
+def update(task):
+    num = db.index(task)
+    text = form['new_task']
+    db[num] = text
+    
     return redirect(url_for('main'))
 
 
