@@ -30,13 +30,13 @@ def delete(task):
 
 
 # Update list
-@app.route('/update/<task>', methods=['GET'])
-def update(task):
-    num = db.index(task)
-    text = '수정'
-    db[num] = text
+# @app.route('/update/<task>', methods=['GET'])
+# def update(task):
+#     num = db.index(task)
+#     text = '수정'
+#     db[num] = text
 
-    return redirect(url_for('main'))
+#     return redirect(url_for('main'))
 
 
 if __name__ == '__main__':
