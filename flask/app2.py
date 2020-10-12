@@ -23,7 +23,6 @@ ma = Marshmallow(app)
 
 
 # db Model
-
 class Todos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     desc = db.Column(db.String(100), nullable=False)
